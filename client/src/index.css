@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "DM Sans", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --color-background: #f7f5f0;
+  --color-foreground: #1d2422;
+  --color-primary: #173d38;
+  --color-primary-foreground: #ffffff;
+  --color-border: #e3e6df;
+  --color-input: #e3e6df;
+  --color-ring: #d56835;
+}
+
+* { box-sizing: border-box; }
+html { background: #f7f5f0; }
+body { margin: 0; min-width: 320px; background: #f7f5f0; color: #1d2422; font-family: "DM Sans", "Noto Sans KR", sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+@media (prefers-reduced-motion: no-preference) {
+  button, a { transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+  button:active { transform: scale(.97); }
+}
+
+::selection { background: #f5b08f; color: #173d38; }
+.app-canvas { background-image: radial-gradient(circle at 88% 2%, rgba(232,111,62,.09), transparent 19rem), radial-gradient(circle at 10% 42%, rgba(23,61,56,.055), transparent 22rem); }
