@@ -1,0 +1,30 @@
+import { COOKIE_NAME } from "@shared/const";
+import { getSessionCookieOptions } from "./_core/cookies";
+import { systemRouter } from "./_core/systemRouter";
+import { publicProcedure, router } from "./_core/trpc";
+import { buildOnWorksRouter } from "./routers/buildOnWorks";
+import { phoneAuthRouter } from "./routers/phoneAuth";
+
+export const appRouter = router({
+    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
+  system: systemRouter,
+  auth: router({
+    me: publicProcedure.query(opts => {
+      const user = opts.ctx.user;
+      if (!user) return null;
+      const { passwordHash: _passwordHash, ...safeUser } = user;
+      return safeUser;
+    }),
+    logout: publicProcedure.mutation(({ ctx }) => {
+      const cookieOptions = getSessionCookieOptions(ctx.req);
+      ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
+      return {
+        success: true,
+      } as const;
+    }),
+  }),
+  buildOnWorks: buildOnWorksRouter,
+  phoneAuth: phoneAuthRouter,
+});
+
+export type AppRouter = typeof appRouter;
