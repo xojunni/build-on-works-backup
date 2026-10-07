@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1788742582656,
+      "tag": "0000_heavy_daredevil",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1788742786777,
+      "tag": "0001_polite_morlun",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1788744038668,
+      "tag": "0002_familiar_silk_fever",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1788764829522,
+      "tag": "0003_melodic_yellow_claw",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1788845216199,
+      "tag": "0004_thankful_maestro",
+      "breakpoints": true
+    }
+  ]
+}
